@@ -39,9 +39,15 @@ const Search = () => {
           />
         </form>
       </div>
-      <section className="pt-20">
-        <CocktailsList cocktails={cocktails} />
-      </section>
+      {!cocktails.drinks ? (
+        <h2 className="font-bold text-3xl p-8 tracking-widest">
+          No Cocktails Matched Your Search Criteria
+        </h2>
+      ) : (
+        <section className="pt-20">
+          <CocktailsList cocktails={cocktails} />
+        </section>
+      )}
     </div>
   );
 };
